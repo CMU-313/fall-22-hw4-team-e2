@@ -11,6 +11,8 @@ joblib = "*"
 flask = "*"
 pytest = "*"
 jupyter = "*"
+flask-restx = "*"
+werkzeug = "==2.1.2"
 
 [dev-packages]
 pandas = "*"
