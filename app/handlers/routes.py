@@ -31,4 +31,3 @@ def configure_routes(app):
         query = pd.get_dummies(query_df)
         prediction = clf.predict(query)
         return jsonify(np.ndarray.item(prediction))
-        # return jsonify(np.asscalar(prediction))
