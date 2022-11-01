@@ -25,9 +25,15 @@ paths:
           required: true
           schema:
             type: integer
-        - name: health
+        - name: G1
           in: query
-          description: current health status (from 1 - very bad to 5 - very good)
+          description: first period grade (from 0 to 20)
+          required: true
+          schema:
+            type: integer
+        - name: G2
+          in: query
+          description: second period grade (from 0 to 20)
           required: true
           schema:
             type: integer
