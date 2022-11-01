@@ -1,6 +1,7 @@
 from flask import Flask
 import pandas as pd 
 from app.handlers.routes import configure_routes
+from pathlib import Path
 
 
 def test_local_data():
@@ -8,7 +9,9 @@ def test_local_data():
     configure_routes(app)
     client = app.test_client()
 
-    df = pd.read_csv("/Users/ryanmcgrady/Desktop/Fall 2022/17313/fall-22-hw4-team-e2/data/student-mat.csv", sep=";", index_col=False) 
+    parent_path = (Path(__file__).parent)
+    file_path = (parent_path / "../../data/student-mat.csv").resolve()
+    df = pd.read_csv(file_path, sep=";", index_col=False) 
     df = df.filter(['age', 'absences', 'health'])
     df = df.reset_index(drop=True)
     url = '/predict' 
