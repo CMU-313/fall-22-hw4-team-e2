@@ -21,11 +21,13 @@ def configure_routes(app):
         #use entries from the query string here but could also use json
         age = request.args.get('age')
         absences = request.args.get('absences')
-        health = request.args.get('health')
-        data = [[age], [health], [absences]]
+        g1 = request.args.get('G1')
+        g2 = request.args.get('G2')
+        data = [[age], [g1], [absences]]
         query_df = pd.DataFrame({
             'age': pd.Series(age),
-            'health': pd.Series(health),
+            'G1': pd.Series(g1),
+            'G2': pd.Series(g2),
             'absences': pd.Series(absences)
         })
         query = pd.get_dummies(query_df)
