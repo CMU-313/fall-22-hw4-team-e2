@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  version: 1.0.0
+  title: Homework 4
+  description: |-
+    Documentation for Homework 4. ML prediction for student success for applications.
+servers:
+  - url: http://127.0.0.1:5000
+tags:
+  - name: Predict
+    description: endpoint for prediction
+
+paths:
+  /predict:
+    get:
+      tags:
+        - Predict
+      summary: Student success prediction
+      description: Predict which applicants are more likely to succeed. Parameters likely to change
+      operationId: predict
+      parameters:
+        - name: age
+          in: query
+          description: student's age (from 15 to 22)
+          required: true
+          schema:
+            type: integer
+        - name: health
+          in: query
+          description: current health status (from 1 - very bad to 5 - very good)
+          required: true
+          schema:
+            type: integer
+        - name: absences
+          in: query
+          description: number of school absences (from 0 to 93)
+          required: true
+          schema:
+            type: integer
+      responses:
+            '200':
+              description: OK
+            '500':
+              description: Invalid input
