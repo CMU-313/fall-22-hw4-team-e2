@@ -10,7 +10,25 @@ def test_base_route():
     url = '/'
 
     response = client.get(url)
+  
+    parent_path = (Path(__file__).parent)
+    file_path = (parent_path / "../../data/student-mat.csv").resolve()
+    df = pd.read_csv(file_path, sep=";", index_col=False) 
+    df = df.filter(['age', 'absences', 'health'])
+    df = df.reset_index(drop=True)
+    url = '/predict' 
+    
+    d = df.to_dict()
 
+    # print(d)
+
+    for i in range(len(df)):
+        age = pd.Series(d["age"].values())
+        health = pd.Series(d["health"].values())
+        absences = pd.Series(d["absences"].values())
+        url = '/predict?' + "age=" + str(age[i]) + "&absences=" + str(absences[i]) + "&health=" + str(absences[i])
+        response = client.get(url)
+        assert response.status_code == 200
     assert response.status_code == 200
     assert response.get_data() == b'try the predict route it is great!'
 
