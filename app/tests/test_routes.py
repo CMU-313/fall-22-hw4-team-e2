@@ -18,6 +18,8 @@ def test_local_data():
     
     d = df.to_dict()
 
+    # print(d)
+
     for i in range(len(df)):
         age = pd.Series(d["age"].values())
         health = pd.Series(d["health"].values())
