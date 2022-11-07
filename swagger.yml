@@ -19,12 +19,6 @@ paths:
       description: Predict which applicants are more likely to succeed. Parameters likely to change
       operationId: predict
       parameters:
-        - name: age
-          in: query
-          description: student's age (from 15 to 22)
-          required: true
-          schema:
-            type: integer
         - name: G1
           in: query
           description: first period grade (from 0 to 20)

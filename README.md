@@ -2,6 +2,23 @@
 
 Please consult the [homework assignment](https://cmu-313.github.io//assignments/hw4) for additional context and instructions for this code.
 
+## Model Update
+
+We updated our model with the new attributes described in our Swagger docs:
+- Absences: number of school absences (from 0 to 93)
+- G1: first period grade (from 0 to 20)
+- G2: second period grade (from 0 to 20)
+
+We chose these values based on their statistical correlation to G3 (the target value) with a pandas correlation matrix. The relative values are below (higher is better, max is 1):
+
+- Absences: 0.034247
+- G1: 0.801468
+- G2: 0.904868
+
+We chose to remove Age as an attribute because of its low correlatin (-0.161579), and we did not believe that it should be used to make an acceptance decision. Additionally, we chose to exclude many of the other values in the dataset as they may lead to unnecessary biases, such as the education of the parents or the health of the student.
+
+Because of the limited bounds of the attributes and its ability to implicitly handle collinearity in features, we decided to continue using a Random Forrest Classifier. Using a train/test split of 33%, we were able to achieve an Accuracy of 97.7099% and an F1 Score of 94.1176%, which is a significant improvement from the previous model.
+
 ## pipenv
 
 [pipenv](https://pipenv.pypa.io/en/latest) is a packaging tool for Python that solves some common problems associated with the typical workflow using pip, virtualenv, and the good old requirements.txt.
