@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  version: 1.0.0
+  version: 1.0.1
   title: Homework 4
   description: |-
     Documentation for Homework 4. ML prediction for student success for applications.
@@ -41,4 +41,4 @@ paths:
             '200':
               description: OK
             '500':
-              description: Invalid input
+              description: Invalid input (missing value or out of range)

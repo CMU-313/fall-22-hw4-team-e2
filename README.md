@@ -17,7 +17,7 @@ We chose these values based on their statistical correlation to G3 (the target v
 
 We chose to remove Age as an attribute because of its low correlatin (-0.161579), and we did not believe that it should be used to make an acceptance decision. Additionally, we chose to exclude many of the other values in the dataset as they may lead to unnecessary biases, such as the education of the parents or the health of the student.
 
-Because of the limited bounds of the attributes and its ability to implicitly handle collinearity in features, we decided to continue using a Random Forrest Classifier. Using a train/test split of 33%, we were able to achieve an Accuracy of 97.7099% and an F1 Score of 94.1176%, which is a significant improvement from the previous model.
+Because of the limited bounds of the attributes and its ability to implicitly handle collinearity in features, we decided to continue using a Random Forrest Classifier. Using a train/test split of 33%, we were able to achieve an Accuracy of 98.4733% and an F1 Score of 96.1538%, which is a significant improvement from the previous model.
 
 ## pipenv
 
