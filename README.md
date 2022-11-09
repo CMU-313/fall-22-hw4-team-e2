@@ -1,4 +1,9 @@
-# HW4 Starter Code and Instructions
+# Design Documentation
+Our design documentation includes discussion of tradeoffs, feature description, software quality priorities, and diagrams. 
+
+It can be found here: https://docs.google.com/document/d/1PX23NYXAA5w7T5MVWJ6H80YkObGheSM1yzN46Aapwvc/edit?usp=sharing
+
+## HW4 Starter Code and Instructions
 
 Please consult the [homework assignment](https://cmu-313.github.io//assignments/hw4) for additional context and instructions for this code.
 
